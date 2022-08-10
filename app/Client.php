@@ -38,7 +38,7 @@ class Client extends Model implements HasMedia
     }
     public function setFolderIdAttribute($input)
     {
-        $this->attributes['folder_id'] = $input ? $input : null;
+        $this->attributes['folder_id'] = $input ? $input : null; //testing
     }
 
     public function appForm()

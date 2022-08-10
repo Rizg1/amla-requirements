@@ -173,7 +173,7 @@ class ClientsController extends Controller
 
         $files = File::where('folder_id', $company_id)->get();
 
-        $filenames = [];
+        $filenames = []; //array
         foreach ($files as $file) {
             foreach ($file->getMedia('filename') as $f) {
                 $filenames[] = ['id' => $f->id, 'filename' => $f->file_name]; // company id, filename
