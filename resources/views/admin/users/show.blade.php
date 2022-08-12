@@ -22,7 +22,7 @@
                         </tr>
                         <tr>
                             <th>@lang('quickadmin.users.fields.role')</th>
-                            <td field-key='role'>{{ $user->role->title or '' }}</td>
+                            <td field-key='role'>{{ $user->role->title}}</td>
                         </tr>
                     </table>
                 </div>
