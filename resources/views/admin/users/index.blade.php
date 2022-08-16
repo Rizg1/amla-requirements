@@ -49,7 +49,7 @@
                                     <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
                                     @endcan
                                     @can('user_edit')
-                                    <a href="{{ route('admin.users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                                    <a href="{{ route('admin.users.edit',[$user->id]) }}" class="btn btn-xs btn-warning">@lang('quickadmin.qa_edit')</a>
                                     @endcan
                                     @can('user_delete')
 {!! Form::open(array(

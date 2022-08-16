@@ -45,7 +45,7 @@
                                     <a href="{{ route('admin.roles.show',[$role->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
                                     @endcan
                                     @can('role_edit')
-                                    <a href="{{ route('admin.roles.edit',[$role->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                                    <a href="{{ route('admin.roles.edit',[$role->id]) }}" class="btn btn-xs btn-warning">@lang('quickadmin.qa_edit')</a>
                                     @endcan
                                     @can('role_delete')
 {!! Form::open(array(

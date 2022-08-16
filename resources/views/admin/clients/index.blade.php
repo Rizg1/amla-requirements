@@ -362,7 +362,7 @@
                             @else
                                 <td>
                                     @can('client_edit')
-                                        <a href="{{ route('admin.clients.edit',[$client->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                                        <a href="{{ route('admin.clients.edit',[$client->id]) }}" class="btn btn-xs btn-warning">@lang('quickadmin.qa_edit')</a>
                                     @endcan
                                     @can('client_delete')
                                         {!! Form::open(array(
