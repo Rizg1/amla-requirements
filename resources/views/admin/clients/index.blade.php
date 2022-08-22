@@ -5,7 +5,7 @@
     <h3 class="page-title">@lang('quickadmin.clients.title')</h3>
     @can('client_create')
     <p>
-     <a href="{{ route('admin.clients.create') }}" class="btn btn-success">@lang('quickadmin.qa_add_new')</a>
+     <a href="{{ route('admin.clients.create') }}" class="btn btn-success">Add New Details (For the Company)</a>
         
     </p>
     @endcan

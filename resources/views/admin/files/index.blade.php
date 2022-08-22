@@ -7,10 +7,10 @@
         <p>
 
             @if (Auth::getUser()->role_id == 2 && $userFilesCount >= 150)
-                <a href="{{ route('admin.files.create') }}" class="btn btn-success">@lang('quickadmin.qa_add_new')</a>
+                <a href="{{ route('admin.files.create') }}" class="btn btn-success">Upload Files (For the Company)</a>
                 
             @else
-                <a href="{{ route('admin.files.create') }}" class="btn btn-success">@lang('quickadmin.qa_add_new')</a>
+                <a href="{{ route('admin.files.create') }}" class="btn btn-success">Upload Files (For the Company)</a>
             @endif
              @if(!is_null(Auth::getUser()->role_id) && config('quickadmin.can_see_all_records_role_id') == Auth::getUser()->role_id)
              <!--  @if(Session::get('File.filter', 'all') == 'my')

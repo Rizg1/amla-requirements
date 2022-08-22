@@ -12,8 +12,13 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('folder_id', trans('quickadmin.files.fields.folder').'*', ['class' => 'control-label']) !!}
-                    {!! Form::select('folder_id', $folders, old('folder_id'), ['class' => 'form-control select2', 'required' => '']) !!}
+                <label for="company">Company</label>
+                    
+                    <select name="folder_id" id="company" class="form-control select2" required>
+                        @foreach ($folders as $key => $folder)
+                            <option value="{{ $key }}">{{ $folder }}</option>
+                        @endforeach
+                    </select>
                     <p class="help-block"></p>
                     @if($errors->has('folder_id'))
                         <p class="help-block">
