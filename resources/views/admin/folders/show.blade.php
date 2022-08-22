@@ -28,7 +28,7 @@
                     @endcan
 
                     <th>Filename</th>
-                    <th>Folder</th>
+                    <th>Company</th>
                     @if( request('show_deleted') == 1 )
 
                     @else

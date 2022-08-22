@@ -55,7 +55,7 @@
             @foreach ($folders as $folder)
                 <tr data-entry-id="{{ $folder->id }}">
                     <td field-key='name'>{{ $folder->name }}</td>
-                                <td field-key='created_by'>{{ $folder->created_by->name or '' }}</td>
+                                <td field-key='created_by'>{{ $folder->created_by->name}}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     @can('delete')
@@ -86,7 +86,7 @@
                                     <a href="{{ route('folders.edit',[$folder->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
                                     @endcan
                                     @can('delete')
-{!! Form::open(array(
+                                        {!! Form::open(array(
                                         'style' => 'display: inline-block;',
                                         'method' => 'DELETE',
                                         'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
@@ -106,6 +106,8 @@
     </tbody>
 </table>
 </div>
+</div>
+
 <div role="tabpanel" class="tab-pane " id="files">
 <table class="table table-bordered table-striped {{ count($files) > 0 ? 'datatable' : '' }}">
     <thead>
@@ -124,8 +126,8 @@
         @if (count($files) > 0)
             @foreach ($files as $file)
                 <tr data-entry-id="{{ $file->id }}">
-                    <td field-key='folder'>{{ $file->folder->name or '' }}</td>
-                                <td field-key='created_by'>{{ $file->created_by->name or '' }}</td>
+                    <td field-key='folder'>{{ $file->folder->name}}</td>
+                                <td field-key='created_by'>{{ $file->created_by->name}}</td>
                                 <td field-key='filename'>@if($file->filename)<a href="{{ asset(env('UPLOAD_PATH').'/' . $file->filename) }}" target="_blank">Download file</a>@endif</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
@@ -171,17 +173,20 @@
             @endforeach
         @else
             <tr>
-                <td colspan="9">@lang('quickadmin.qa_no_entries_in_table')</td>
+                <td colspan="7">@lang('quickadmin.qa_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>
 </table>
-</div>
-</div>
+
+
+
 
             <p>&nbsp;</p>
-
+    
             <a href="{{ route('admin.users.index') }}" class="btn btn-default">@lang('quickadmin.qa_back_to_list')</a>
         </div>
-    </div>
+        </div>
+        
+        
 @stop
