@@ -33,5 +33,9 @@ class Folder extends Model
     {
         return $this->belongsTo(User::class, 'created_by_id');
     }
+    public function setFormIdAttribute($input)
+    {
+        $this->attributes['form_id'] = $input ? $input : null; 
+    }
     
 }

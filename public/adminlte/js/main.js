@@ -27,13 +27,13 @@ $(document).ready(function () {
             //         columns: ':visible'
             //     }
             // },
-            // {
-            //      extend: 'excel',
-            //      text: window.excelButtonTrans,
-            //      exportOptions: {
-            //          columns: ':visible'
-            //      }
-            // },
+            {
+                 extend: 'excel',
+                 text: window.excelButtonTrans,
+                 exportOptions: {
+                     columns: ':visible'
+                 }
+            },
             // {
             //     extend: 'pdf',
             //     text: window.pdfButtonTrans,
@@ -101,6 +101,7 @@ $(document).ready(function () {
 
         return false;
     });
+
 
     $(document).on('click', '#select-all', function () {
         var selected = $(this).is(':checked');
@@ -191,6 +192,7 @@ $(document).ready(function () {
 
 });
 
+
 function processAjaxTables() {
     $('.ajaxTable').each(function () {
         window.dtDefaultOptions.processing = true;
@@ -212,5 +214,8 @@ function processAjaxTables() {
             $(this).siblings('.actions').html('<a href="' + window.route_mass_crud_entries_destroy + '" class="btn btn-xs btn-danger js-delete-selected" style="margin-top:0.755em;margin-left: 20px;">'+window.deleteButtonTrans+'</a>');
         }
     });
+    
 
 }
+
+

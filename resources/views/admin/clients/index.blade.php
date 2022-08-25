@@ -24,8 +24,10 @@
         <div class="panel-heading">
             @lang('quickadmin.qa_list')
         </div>
+        
         <div class="panel-body table-responsive">
             <table id="myTable" class="table table-bordered table-striped {{ count($clients) > 0 ? 'datatable' : '' }} @can('client_delete') @if ( request('show_deleted') != 1 ) dt-select @endif @endcan">
+                
                 <thead>
                 <tr>
                     @can('client_delete')
@@ -342,20 +344,20 @@
                                 <td>
                                     @can('client_delete')
                                         {!! Form::open(array(
-        'style' => 'display: inline-block;',
-        'method' => 'POST',
-        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
-        'route' => ['admin.clients.restore', $client->id])) !!}
-                                        {!! Form::submit(trans('quickadmin.qa_restore'), array('class' => 'btn btn-xs btn-success')) !!}
-                                        {!! Form::close() !!}
-                                    @endcan
-                                    @can('client_delete')
-                                        {!! Form::open(array(
-        'style' => 'display: inline-block;',
-        'method' => 'DELETE',
-        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
-        'route' => ['admin.clients.perma_del', $client->id])) !!}
-                                        {!! Form::submit(trans('quickadmin.qa_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
+                        'style' => 'display: inline-block;',
+                        'method' => 'POST',
+                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
+                        'route' => ['admin.clients.restore', $client->id])) !!}
+                                                        {!! Form::submit(trans('quickadmin.qa_restore'), array('class' => 'btn btn-xs btn-success')) !!}
+                                                        {!! Form::close() !!}
+                                                    @endcan
+                                                    @can('client_delete')
+                                                        {!! Form::open(array(
+                        'style' => 'display: inline-block;',
+                        'method' => 'DELETE',
+                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
+                        'route' => ['admin.clients.perma_del', $client->id])) !!}
+                                                        {!! Form::submit(trans('quickadmin.qa_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
                                         {!! Form::close() !!}
                                     @endcan`
                                 </td>
@@ -395,5 +397,9 @@
                 @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.clients.mass_destroy') }}'; @endif
         @endcan
 
+    
+
     </script>
+    
+    
 @endsection

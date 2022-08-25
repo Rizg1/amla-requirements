@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Form;
 use App\File;
 use App\Folder;
 use Request;
@@ -133,12 +134,14 @@ class FoldersController extends Controller
             return abort(401);
         }
         
+        $forms = \App\Form::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');
         $created_bies = \App\User::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');$files = \App\File::where('folder_id', $id)->get();
 
+        
         $folder = Folder::findOrFail($id);
         $userFilesCount = File::where('created_by_id', Auth::getUser()->id)->count();
 
-        return view('admin.folders.show', compact('folder', 'files', 'userFilesCount'));
+        return view('admin.folders.show', compact('folder', 'files', 'userFilesCount', 'forms'));
     }
 
 
