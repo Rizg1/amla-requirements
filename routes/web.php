@@ -50,7 +50,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     //ajax request
     Route::post('/get-files', [ClientsController::class, 'getFiles'])->name('clients.get.files');
 
-    Route::get('clients/export/', [ClientsExportController::class, 'export']);
+    Route::get('/export', [ClientsController::class, 'export']);
 
     Route::resource('reports', 'Admin\ReportsController');
+
+   // Route::get('export/', [UsersController::class, 'export']);
 });

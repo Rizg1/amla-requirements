@@ -6,12 +6,13 @@ use App\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Exports\ClientsExport;
-use Illuminate\Http\Request as NRequest;
+
 class ClientExportController extends Controller
 {
     public function export() 
     {
+        dd(Client::all());
         
-        return Excel::download(new ClientExport, 'Clients.xlsx');
+        return Excel::download(new ClientsExport, 'Clients.xlsx');
     }
 }

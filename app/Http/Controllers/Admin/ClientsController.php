@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Request;
 use App\File;
-
+use App\Exports\ClientsExport;
 use App\Client;
 use App\Folder;
 use App\Http\Controllers\Controller;
@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request as NRequest;
 use App\Http\Requests\Admin\StoreClientsRequest;
 use App\Http\Requests\Admin\UpdateClientsRequest;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ClientsController extends Controller
 {   
@@ -99,7 +100,7 @@ class ClientsController extends Controller
             return abort(401);
         }
         
-        $created_bies = \App\User::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');$clients = \App\File::where('client_id', $id)->get();
+        $created_bies = \App\User::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');
 
         $client = Client::findOrFail($id);
         $userClientsCount = File::where('created_by_id', Auth::getUser()->id)->count();
@@ -183,5 +184,11 @@ class ClientsController extends Controller
         return $filenames; //return all filenames associated to the company helllo worlddd
     }
     
+    public function export() 
+    {
+        
+        
+        return Excel::download(new ClientsExport, 'Clients.xlsx');
+    }
     
 }
