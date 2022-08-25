@@ -83,6 +83,14 @@
                 </a>
             </li>
             @endcan
+            @can('client_access')
+            <li class="{{ $request->segment(2) == 'reports' ? 'active' : '' }}">
+                <a href="{{ route('admin.reports.index') }}">
+                    <i class="fa fa-upload"></i>
+                    <span class="title">Report</span>
+                </a>
+            </li>
+            @endcan
 
 
             <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">

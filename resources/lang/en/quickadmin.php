@@ -64,6 +64,14 @@ return [
 			'policy' => 'Policy Number'
 		],
 	],
+	'Report' => [
+		'title' => 'Report',
+		'fields' => [
+			'name' => 'Name',
+			'created-by' => 'Created by',
+		],
+	],
+	
 
 	'qa_create' => 'Create',
 	'qa_save' => 'Save',
@@ -301,4 +309,5 @@ return [
 	'qa_import_data' => 'Import data',
 	'qa_imported_rows_to_table' => 'Imported :rows rows to :table table',
 	'quickadmin_title' => 'File Storage',
+	'qa_download_selected' => 'Download Selected',
 ];
