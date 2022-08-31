@@ -22,7 +22,7 @@
                         </tr>
                         <tr>
                             <th>@lang('quickadmin.users.fields.role')</th>
-                            <td field-key='role'>{{ $user->role->title}}</td>
+                            <td field-key='role'>{{ $user->role->title or ''}}</td>
                         </tr>
                     </table>
                 </div>
@@ -55,7 +55,7 @@
             @foreach ($folders as $folder)
                 <tr data-entry-id="{{ $folder->id }}">
                     <td field-key='name'>{{ $folder->name }}</td>
-                                <td field-key='created_by'>{{ $folder->created_by->name}}</td>
+                                <td field-key='created_by'>{{ $folder->created_by->name or ''}}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     @can('delete')
@@ -128,7 +128,7 @@
                 <tr data-entry-id="{{ $file->id }}">
                     <td field-key='folder'>{{ $file->folder->name}}</td>
                                 <td field-key='created_by'>{{ $file->created_by->name}}</td>
-                                <td field-key='filename'>@if($file->filename)<a href="{{ asset(env('UPLOAD_PATH').'/' . $file->filename) }}" target="_blank">Download file</a>@endif</td>
+                                <td field-key='filename'>@if($file->filename or '')<a href="{{ asset(env('UPLOAD_PATH').'/' . $file->filename) }}" target="_blank">Download file</a>@endif</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     @can('delete')

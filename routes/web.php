@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ClientsController;
+use App\Http\Controllers\Admin\ClientsExportController;
 
 Route::get('/', function () { return redirect('/admin/home'); });
 
@@ -25,7 +26,7 @@ $this->router->post('register', 'Auth\RegisterController@register')->name('auth.
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/home', 'HomeController@index');
-
+    Route::post('/export', ClientsExportController::class)->name('export');
 
     Route::resource('roles', 'Admin\RolesController');
     Route::post('roles_mass_destroy', ['uses' => 'Admin\RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
@@ -50,9 +51,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     //ajax request
     Route::post('/get-files', [ClientsController::class, 'getFiles'])->name('clients.get.files');
 
-    Route::get('/export', [ClientsController::class, 'export']);
+
 
     Route::resource('reports', 'Admin\ReportsController');
 
-   // Route::get('export/', [UsersController::class, 'export']);
+  
 });

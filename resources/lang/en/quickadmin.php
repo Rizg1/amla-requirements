@@ -284,7 +284,7 @@ return [
 	'qa_print' => 'Print',
 	'qa_excel' => 'Excel',
 	'qa_copy' => 'Copy',
-	'qa_colvis' => 'Column visibility',
+	'qa_colvis' => 'Hide column',
 	'qa_pdf' => 'PDF',
 	'qa_reset_password' => 'Reset password',
 	'qa_reset_password_woops' => '<strong>Whoops!</strong> There were problems with input:',

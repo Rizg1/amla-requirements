@@ -77,6 +77,7 @@
                     <th>Distric Town City</th>
                     <th>Province Country Zip</th>
                     <th>Remarks</th>
+                    <th>Created at </th>
 
 
                     @if( request('show_deleted') == 1 )
@@ -339,7 +340,11 @@
                                 {{$client->rem}}
                             </td>
                             @endcan
-                            
+                            <td field-key='rem'>
+                                 @can('client_view')
+                                {{$client->created_at->format('d-M-Y')}}
+                            </td>
+                            @endcan
                             @if( request('show_deleted') == 1 )
                                 <td>
                                     @can('client_delete')
@@ -381,7 +386,7 @@
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="43">@lang('quickadmin.qa_no_entries_in_table')</td>
+                        <td colspan="44">@lang('quickadmin.qa_no_entries_in_table')</td>
                     </tr>
                 @endif
                 </tbody>

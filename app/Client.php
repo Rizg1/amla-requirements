@@ -1,6 +1,7 @@
 <?php
 namespace App;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Traits\FilterByUser;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
@@ -15,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 */
 class Client extends Model implements HasMedia
 {
-    use SoftDeletes,InteractsWithMedia, FilterByUser;
+    use SoftDeletes,InteractsWithMedia, FilterByUser, HasFactory;
 
     protected $guarded = [];
     

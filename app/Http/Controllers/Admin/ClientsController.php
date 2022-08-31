@@ -184,11 +184,6 @@ class ClientsController extends Controller
         return $filenames; //return all filenames associated to the company helllo worlddd
     }
     
-    public function export() 
-    {
-        
-        
-        return Excel::download(new ClientsExport, 'Clients.xlsx');
-    }
+    
     
 }

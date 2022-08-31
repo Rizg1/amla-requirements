@@ -81,7 +81,7 @@
         'method' => 'DELETE',
         'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
         'route' => ['admin.folders.perma_del', $folder->id])) !!}
-                                        {!! Form::submit(trans('quickadmin.qa_permadel'), array('class' => 'btn btn-xs btn-warning')) !!}
+                                        {!! Form::submit(trans('quickadmin.qa_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
                                         {!! Form::close() !!}
                                     @endcan
                                 </td>
@@ -117,15 +117,15 @@
 @section('javascript')
     <script>
         $(document).ready(function () {
-//            var table = $('#myTable_Wrapper').DataTable();
-//console.log(table);
-//            table.button( '.dt-button' ).remove();
+           var table = $('#myTable').DataTable();
+           table.button( '.dt-button' ).hide();
         })
     </script>
     <script>
         @can('folder_delete')
                 @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.folders.mass_destroy') }}'; @endif
         @endcan
+
 
     </script>
 @endsection

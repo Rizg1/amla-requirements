@@ -27,13 +27,13 @@ $(document).ready(function () {
             //         columns: ':visible'
             //     }
             // },
-            {
-                 extend: 'excel',
-                 text: window.excelButtonTrans,
-                 exportOptions: {
-                     columns: ':visible'
-                 }
-            },
+            // {
+            //      extend: 'excel',
+            //      text: window.excelButtonTrans,
+            //      exportOptions: {
+            //          columns: ':visible'
+            //      }
+            // },
             // {
             //     extend: 'pdf',
             //     text: window.pdfButtonTrans,
@@ -217,5 +217,3 @@ function processAjaxTables() {
     
 
 }
-
-

@@ -3,12 +3,12 @@
 @section('content')
     <h3 class="page-title">{{$folder->name}}</h3>
     <p>
-        @if (Auth::getUser()->role_id == 2 && $userFilesCount > 150)
+        <!-- @if (Auth::getUser()->role_id == 2 && $userFilesCount > 150)
             <a href="{{url('admin/files/create?folder_id=' . $folder->id)}}" class="btn btn-success disabled">Add file to this Company</a>
             
         @else
             <a href="{{url('admin/files/create?folder_id=' . $folder->id)}}" class="btn btn-success">Add New File to this Company</a>
-        @endif
+        @endif -->
     </p>
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -68,13 +68,13 @@
                                 
                             <td field-key='folder'>{{ $file->folder->name }}</td>
                             <td field-key='Form Type'>
-                            <select name="form_id" id="form" class="input-size select2">
+                            <!-- <select name="form_id" id="form" class="input-size select2">
                                         
                                 @foreach ($forms as $form)
                                 <option value="{{ $form }}">{{ $form }}</option>
                                 @endforeach
                                        
-                            </select></td>
+                            </select></td> -->
                             <td for='dateuploaded'>{{ $file->created_at->isoFormat('d-MMM-Y') }}</td>
                             @if( request('show_deleted') == 1 )
                                 <td>

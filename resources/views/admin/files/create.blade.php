@@ -14,11 +14,13 @@
                 <div class="col-xs-12 form-group">
                 <label for="company">Company</label>
                     
-                    <select name="folder_id" id="company" class="form-control select2" required>
+                    {!! Form::select('folder_id', $folders, old('folder_id'), ['class' => 'form-control select2', 'required' => '']) !!}
+                    
+                    <!-- <select name="folder_id" id="company" class="form-control select2" required>
                         @foreach ($folders as $key => $folder)
                             <option value="{{ $key }}">{{ $folder }}</option>
                         @endforeach
-                    </select>
+                    </select> -->
                     <p class="help-block"></p>
                     @if($errors->has('folder_id'))
                         <p class="help-block">

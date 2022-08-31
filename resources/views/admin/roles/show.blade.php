@@ -14,7 +14,7 @@
                     <table class="table table-bordered table-striped">
                         <tr>
                             <th>@lang('quickadmin.roles.fields.title')</th>
-                            <td field-key='title'>{{ $role->title }}</td>
+                            <td field-key='title'>{{ $role->title or ''}}</td>
                         </tr>
                     </table>
                 </div>
@@ -45,7 +45,7 @@
                 <tr data-entry-id="{{ $user->id }}">
                     <td field-key='name'>{{ $user->name }}</td>
                                 <td field-key='email'>{{ $user->email }}</td>
-                                <td field-key='role'>{{ $user->role->title}}</td>
+                                <td field-key='role'>{{ $user->role->title or ''}}</td>
                                                                 <td>
                                     @can('user_view')
                                     <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
