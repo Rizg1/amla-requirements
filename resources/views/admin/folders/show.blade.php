@@ -68,13 +68,13 @@
                                 
                             <td field-key='folder'>{{ $file->folder->name }}</td>
                             <td field-key='Form Type'>
-                            <!-- <select name="form_id" id="form" class="input-size select2">
+                            <select name="form_id" id="form" class="input-size select2">
                                         
                                 @foreach ($forms as $form)
                                 <option value="{{ $form }}">{{ $form }}</option>
                                 @endforeach
                                        
-                            </select></td> -->
+                            </select></td>
                             <td for='dateuploaded'>{{ $file->created_at->isoFormat('d-MMM-Y') }}</td>
                             @if( request('show_deleted') == 1 )
                                 <td>
@@ -131,3 +131,11 @@
 
 
 @stop
+@push('javascript')
+    <script>
+        $(document).ready(function(){
+            var form_id = $('#form').val()
+
+        })
+    </script>
+@endpush
