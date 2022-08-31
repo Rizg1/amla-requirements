@@ -117,8 +117,8 @@
 @section('javascript')
     <script>
         $(document).ready(function () {
-           var table = $('#myTable').DataTable();
-           table.button( '.dt-button' ).hide();
+        //    var table = $('#myTable').DataTable();
+        //    table.button( '.dt-button' ).hide();
         })
     </script>
     <script>
