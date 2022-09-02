@@ -79,7 +79,7 @@ class ClientsExport implements FromCollection, WithMapping, WithHeadings
             $client->district ?? "",
             $client->prov ?? "",
             $client->rem ?? "",
-            $client->created_at,
+            $client->created_at->format('d-M-Y'),
         ];
     }
 

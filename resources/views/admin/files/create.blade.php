@@ -80,8 +80,8 @@
                 var roleId = Number(Id);
                 console.log(roleId);
 console.log(totalCount);
-                if (totalCount > 150 && roleId == 2) {
-                    alert("your upload limit is 150 files." +
+                if (totalCount > 1000 && roleId == 2) {
+                    alert("you have already reach the limit of 1000 files." +
                             "Please contact your administrator");
                     $('.file-upload').each(function () {
                         var $this = $(this);
