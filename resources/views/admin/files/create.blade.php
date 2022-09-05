@@ -138,7 +138,13 @@ console.log(totalCount);
                         );
                     }
 
-                })
+                }).on('fileuploadprogressall', function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    $parent.find('.progress-bar').show().css(
+                            'width',
+                            progress + '%'
+                    );
+                });
 
             });
             $(document).on('click', '.remove-file', function () {
