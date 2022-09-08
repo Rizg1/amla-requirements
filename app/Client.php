@@ -71,6 +71,10 @@ class Client extends Model implements HasMedia
     {
         return $this->belongsTo(Media::class, 'by_laws');
     }
+    public function giS()
+    {
+        return $this->belongsTo(Media::class, 'gis');
+    }
     public function corpSec()
     {
         return $this->belongsTo(Media::class, 'corp_sec');

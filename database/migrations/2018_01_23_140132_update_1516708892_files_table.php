@@ -14,7 +14,7 @@ class Update1516708892FilesTable extends Migration
     {
         Schema::table('files', function (Blueprint $table) {
             
-if (!Schema::hasColumn('files', 'file')) {
+            if (!Schema::hasColumn('files', 'file')) {
                 $table->string('file')->nullable();
                 }
         });

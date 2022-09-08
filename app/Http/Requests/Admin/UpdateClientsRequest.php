@@ -31,6 +31,7 @@ class UpdateClientsRequest extends FormRequest
             'sec_reg' => 'nullable',
             'articles_incorp'=> 'nullable',
             'by_laws'=> 'nullable',
+            'gis'=> 'nullable',
             'corp_sec'=> 'nullable',
             'cert_list'=> 'nullable',
             'valid_id'=> 'nullable',

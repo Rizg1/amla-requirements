@@ -28,9 +28,9 @@ class ClientsExport implements FromCollection, WithMapping, WithHeadings
     public function collection()
     {
         return Client::query()->whereDate('created_at','>=',$this->from_date)->whereDate('created_at','<=',$this->end_date)
-                ->select('folder_id','app_form', 'kyc_form', 'enrollment_list', 'signed_proposal', 'sec_reg', 'articles_incorp', 'by_laws', 'corp_sec', 'cert_list', 'valid_id', 'statement','policy','sub_group','top_req', 'broker','sales_group','etcv','category','status','d_sub','lsub_doc','pol_incept','ef_date','exp_date','prog_type','month','modal_billing','ar_officer','remarks','sale_g','branch','reg_date','place_reg','id_sub','id_num','tel_no','n_business','place','district','prov','rem','created_at')
-                ->with('folder','appForm', 'kycForm', 'enrollList', 'signedProposal', 'secReg', 'articlesIncorp', 'byLaws', 'corpSec', 'certList', 'validId', 'stateMent')
-                ->orderBy('id', 'desc')
+                ->select('folder_id','app_form', 'kyc_form', 'enrollment_list', 'signed_proposal', 'sec_reg', 'articles_incorp', 'by_laws', 'gis','corp_sec', 'cert_list', 'valid_id', 'statement','policy','sub_group','broker','sales_group','etcv','pol_incept','ef_date','exp_date','prog_type','modal_billing','ar_officer','remarks','branch','reg_date','place_reg','id_sub','id_num','tel_no','n_business','place','district','prov','rem','created_at')
+                ->with('folder','appForm', 'kycForm', 'enrollList', 'signedProposal', 'secReg', 'articlesIncorp', 'byLaws', 'giS', 'corpSec', 'certList', 'validId', 'stateMent')
+                ->orderBy('id', 'asc')
                 ->get();
     }
 
@@ -45,29 +45,23 @@ class ClientsExport implements FromCollection, WithMapping, WithHeadings
             $client->secReg->file_name ?? "",
             $client->articlesIncorp->file_name ?? "",
             $client->byLaws->file_name ?? "",
+            $client->giS->file_name ?? "",
             $client->corpSec->file_name ?? "",
             $client->certList->file_name ?? "",
             $client->validId->file_name ?? "",
             $client->stateMent->file_name ?? "",
             $client->policy ?? "",
             $client->sub_group ?? "",
-            $client->top_req ?? "",
             $client->broker ?? "",
             $client->sales_group ?? "",
             $client->etcv ?? "",
-            $client->category ?? "",
-            $client->status ?? "",
-            $client->d_sub ?? "",
-            $client->lsub_doc ?? "",
             $client->pol_incept ?? "",
             $client->ef_date ?? "",
             $client->exp_date ?? "",
             $client->prog_type ?? "",
-            $client->month ?? "",
             $client->modal_billing ?? "",
             $client->ar_officer ?? "",
             $client->remarks ?? "",
-            $client->sale_g ?? "",
             $client->branch ?? "",
             $client->reg_date ?? "",
             $client->place_reg ?? "",
@@ -94,29 +88,23 @@ class ClientsExport implements FromCollection, WithMapping, WithHeadings
             'Sec Registration',
             'Articles Of Incorporation', 
             'Copies of By-Laws',
+            'GIS',
             'Corporate Secretary Certificate',
-            'Certified List',
+            'Certified List Under Oath',
             'Copy of Valid IDs', 
-            'Sworn Statement',
+            'Certificate of Beneficial Owner',
             'Policy Number', 
             'Subgroup',
-            'With Top 5 Requirements',
             'Sales/Agent/Broker',
             'Sales Group',
             'ETCV',
-            'Category', 
-            'Status',
-            'Date Submitted',
-            'Date Submitted of Lacking Doc',
             'Policy Inception',
             'Policy Effective Date',
             'Policy Expiry Date',
             'Program Type',
-            'Month',
             'Modal Billing',
             'AR Officer',
             'Remarks',
-            'Sales Group',
             'Branch',
             'Reg Date',
             'Place Registration',

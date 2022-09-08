@@ -80,6 +80,13 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
+                    <label for="gis">GIS</label>
+                    <select name="gis" id="gis" class="form-control select2">
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
                     <label for="corp_sec">Corporate Secretary Certificate</label>
                     <select name="corp_sec" id="corp_sec" class="form-control select2">
                     </select>
@@ -87,7 +94,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    <label for="cert_list">Certified List</label>
+                    <label for="cert_list">Certified List Under Oath</label>
                     <select name="cert_list" id="cert_list" class="form-control select2">
                     </select>
                 </div>
@@ -101,7 +108,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    <label for="statement">Sworn Statement</label>
+                    <label for="statement">Certificate of Beneficial Owner</label>
                     <select name="statement" id="statement" class="form-control select2">
                     </select>
                 </div>
@@ -118,12 +125,12 @@
                     <input type="text" name="sub_group" id="sub_group" class="form-control">
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="top_req">With Top 5 Requirements</label>
                     <input type="text" name="top_req" id="top_req" class="form-control">
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="broker">Sales/Agent/Broker</label>
@@ -142,18 +149,18 @@
                     <input type="text" name="etcv" id="etcv" class="form-control">
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="category">Category</label>
                     <input type="text" name="category" id="category" class="form-control">
                 </div>
-            </div>
+            </div> 
             <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="status">Status</label>
                     <input type="text" name="status" id="status" class="form-control">
                 </div>
-            </div>
+            </div> 
             <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="d_sub">Date Submitted</label>
@@ -165,7 +172,7 @@
                     <label for="lsub_doc">Date Submitted of Lacking Doc</label>
                     <input type="text" name="lsub_doc" id="lsub_doc" class="form-control">
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="pol_incept">Policy Inception</label>
@@ -190,12 +197,12 @@
                     <input type="text" name="prog_type" id="prog_type" class="form-control">
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="month">Month</label>
                     <input type="text" name="month" id="month" class="form-control">
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="modal_billing">Modal Billing</label>
@@ -214,12 +221,12 @@
                     <input type="text" name="remarks" id="remarks" class="form-control">
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="sale_g">Sales Group</label>
                     <input type="text" name="sale_g" id="sale_g" class="form-control">
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="branch">Branch</label>
@@ -316,6 +323,7 @@
                     $('#sec_reg').empty()
                     $('#articles_incorp').empty()
                     $('#by_laws').empty()
+                    $('#gis').empty()
                     $('#corp_sec').empty()
                     $('#cert_list').empty()
                     $('#valid_id').empty()
@@ -327,6 +335,7 @@
                     $("#sec_reg").append('<option value="">Select option</option>')
                     $("#articles_incorp").append('<option value="">Select option</option>')
                     $("#by_laws").append('<option value="">Select option</option>')
+                    $("#gis").append('<option value="">Select option</option>')
                     $("#corp_sec").append('<option value="">Select option</option>')
                     $("#cert_list").append('<option value="">Select option</option>')
                     $("#valid_id").append('<option value="">Select option</option>')
@@ -339,6 +348,7 @@
                         $('#sec_reg').append($('<option>', {value: value['id'], text: value['filename']}))
                         $('#articles_incorp').append($('<option>', {value: value['id'], text: value['filename']}))
                         $('#by_laws').append($('<option>', {value: value['id'], text: value['filename']}))
+                        $('#gis').append($('<option>', {value: value['id'], text: value['filename']}))
                         $('#corp_sec').append($('<option>', {value: value['id'], text: value['filename']}))
                         $('#cert_list').append($('<option>', {value: value['id'], text: value['filename']}))
                         $('#valid_id').append($('<option>', {value: value['id'], text: value['filename']}))

@@ -43,29 +43,30 @@
                     <th>Sec Registration</th>
                     <th>Articles Of Incorporation</th>
                     <th>Copies of By-Laws</th>
+                    <th>GIS</th>
                     <th>Corporate Secretary Cert</th>
-                    <th>Certified List</th>
+                    <th>Certified List Under Oath</th>
                     <th>Copy of Valid IDs</th>
-                    <th>Sworn Statement</th>
+                    <th>Certificate of Beneficial Owner</th>
                     <th>Policy No.</th>
                     <th>Subgroup</th>
-                    <th>With Top 5 Requirements</th>
+                    <!-- <th>With Top 5 Requirements</th> -->
                     <th>Sales/Agent/Broker</th>
                     <th>Sales Group</th>
                     <th>ETCV</th>
-                    <th>Category</th>
+                    <!-- <th>Category</th>
                     <th>Status</th>
                     <th>Date Submitted</th>
-                    <th>Date Submitted of Lacking Doc</th>
+                    <th>Date Submitted of Lacking Doc</th> -->
                     <th>Policy Inception</th>
                     <th>Policy Effective Date</th>
                     <th>Policy Expiry Date</th>
                     <th>Program Type</th>
-                    <th>Month</th>
+                    <!-- <th>Month</th> -->
                     <th>Modal Billing</th>
                     <th>AR Officer</th>
                     <th>Remarks</th>
-                    <th>Sales Group</th>
+                    <!-- <th>Sales Group</th> -->
                     <th>Branch</th>
                     <th>Reg Date</th>
                     <th>Place Registration</th>
@@ -157,6 +158,14 @@
                                 N/A
                                 @endif
                             </td>
+
+                            <td field-key='gis'>
+                                @if(!is_null($client->giS))
+                                <a href="{{ asset('storage/'. $client->giS->model_id. '/' . $client->giS->file_name) }}" target="_blank">{{$client->giS->file_name ?? ''}}</a>
+                                @else
+                                N/A
+                                @endif
+                            </td>
                            
                             <td field-key='corp_sec'>
                                 @if(!is_null($client->corpSec))
@@ -200,10 +209,10 @@
                                 {{$client->sub_group}}
                             </td>
                             @endcan
-                            <td field-key='top_req'>
+                            <!-- <td field-key='top_req'>
                                  @can('client_view')
                                 {{$client->top_req}}
-                            </td>
+                            </td> -->
                             @endcan
                             <td field-key='broker'>
                                  @can('client_view')
@@ -220,7 +229,7 @@
                                 {{$client->etcv}}
                             </td>
                             @endcan
-                            <td field-key='category'>
+                            <!-- <td field-key='category'>
                                  @can('client_view')
                                 {{$client->category}}
                             </td>
@@ -237,7 +246,7 @@
                             @endcan
                             <td field-key='lsub_doc'>
                                  @can('client_view')
-                                {{$client->lsub_doc}}
+                                {{$client->lsub_doc}} -->
                             </td>
                             @endcan
                             <td field-key='pol_incept'>
@@ -260,10 +269,10 @@
                                 {{$client->prog_type}}
                             </td>
                             @endcan
-                            <td field-key='month'>
+                            <!-- <td field-key='month'>
                                  @can('client_view')
                                 {{$client->month}}
-                            </td>
+                            </td> -->
                             @endcan
                             <td field-key='modal_billing'>
                                  @can('client_view')
@@ -280,10 +289,10 @@
                                 {{$client->remarks}}
                             </td>
                             @endcan
-                            <td field-key='sale_g'>
+                            <!-- <td field-key='sale_g'>
                                  @can('client_view')
                                 {{$client->sale_g}}
-                            </td>
+                            </td> -->
                             @endcan
                             <td field-key='branch'>
                                  @can('client_view')

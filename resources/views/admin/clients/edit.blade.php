@@ -103,6 +103,17 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
+                    <label for="gis">GIS</label>
+                    <select name="gis" id="gis" class="form-control select2">
+                        <option value="">N/A</option>
+                        @foreach ($filenames as $filename)
+                            <option value="{{ $filename['id'] }}"{{ ($client->gis == $filename['id']) ? 'selected' : '' }}>{{ $filename['filename'] }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
                     <label for="corp_sec">Corporate Secretary Cert</label>
                     <select name="corp_sec" id="corp_sec" class="form-control select2">
                         <option value="">N/A</option>
@@ -114,7 +125,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    <label for="cert_list">Certified List</label>
+                    <label for="cert_list">Certified List Under Oath</label>
                     <select name="cert_list" id="cert_list" class="form-control select2">
                         <option value="">N/A</option>
                         @foreach ($filenames as $filename)
@@ -136,7 +147,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    <label for="statement">Sworn Statement</label>
+                    <label for="statement">Certificate of Beneficial Owner</label>
                     <select name="statement" id="statement" class="form-control select2">
                         <option value="">N/A</option>
                         @foreach ($filenames as $filename)
@@ -157,12 +168,12 @@
                     <input type="text" name="sub_group" id="sub_group" class="form-control" value="{{$client->sub_group}}">
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="top_req">With Top 5 Requirements</label>
                     <input type="text" name="top_req" id="top_req" class="form-control" value="{{$client->top_req}}">
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="broker">Sales/Agent/Broker</label>
@@ -181,7 +192,7 @@
                     <input type="text" name="etcv" id="etcv" class="form-control" value="{{$client->etcv}}">
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="category">Category</label>
                     <input type="text" name="category" id="category" class="form-control" value="{{$client->category}}">
@@ -204,7 +215,7 @@
                     <label for="lsub_doc">Date Submitted of Lacking Doc</label>
                     <input type="text" name="lsub_doc" id="lsub_doc" class="form-control" value="{{$client->lsub_doc}}">
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="pol_incept">Policy Inception</label>
@@ -229,12 +240,12 @@
                     <input type="text" name="prog_type" id="prog_type" class="form-control" value="{{$client->prog_type}}">
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="month">Month</label>
                     <input type="text" name="month" id="month" class="form-control" value="{{$client->month}}">
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="modal_billing">Modal Billing</label>
@@ -253,12 +264,12 @@
                     <input type="text" name="remarks" id="remarks" class="form-control"  value="{{$client->remarks}}">
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="sale_g">Sales Group</label>
                     <input type="text" name="sale_g" id="sale_g" class="form-control" value="{{$client->sale_g}}">
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-xs-12 form-group">
                     <label for="branch">Branch</label>

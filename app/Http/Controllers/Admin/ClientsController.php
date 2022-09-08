@@ -75,7 +75,7 @@ class ClientsController extends Controller
             return abort(401);
         }
         
-        $client->load('folder', 'appForm', 'kycForm', 'enrollList', 'signedProposal', 'secReg', 'articlesIncorp', 'byLaws', 'corpSec', 'certList', 'validId', 'stateMent');
+        $client->load('folder', 'appForm', 'kycForm', 'enrollList', 'signedProposal', 'secReg', 'articlesIncorp', 'byLaws', 'giS','corpSec', 'certList', 'validId', 'stateMent');
 
         $created_bies = \App\User::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');
 
