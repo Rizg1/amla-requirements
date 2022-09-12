@@ -75,7 +75,7 @@
                                 @endforeach
                                        
                             </select></td> -->
-                            <td for='dateuploaded'>{{ $file->created_at->isoFormat('d-MMM-Y') }}</td>
+                            <td for='dateuploaded'>{{ $file->created_at->format('d-M-Y') }}</td>
                             @if( request('show_deleted') == 1 )
                                 <td>
                                     @can('file_delete')
