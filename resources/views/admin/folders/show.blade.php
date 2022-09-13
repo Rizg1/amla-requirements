@@ -28,7 +28,7 @@
 
                     <th>Filename</th>
                     <th>Company</th>
-                    <th>Form Type</th>
+                    <!-- <th>Form Type</th> -->
                     <th>Date Uploaded</th>
                     @if( request('show_deleted') == 1 )
 
@@ -67,8 +67,8 @@
                                 @endforeach</td>
                                 
                             <td field-key='folder'>{{ $file->folder->name }}</td>
-                            <td field-key='Form Type'>
-                            <!-- <select name="form_id" id="form" class="input-size select2">
+                            <!-- <td field-key='Form Type'>
+                            <select name="form_id" id="form" class="input-size select2">
                                         
                                 @foreach ($forms as $form)
                                 <option value="{{ $form }}">{{ $form }}</option>
