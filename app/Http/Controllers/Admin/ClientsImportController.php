@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Imports\ClientsImport;
@@ -10,7 +10,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class ClientsImportController extends Controller
 {
-    public function __invoke(Request $request)
+    public function import(Request $request)
     {
     Excel::import(new ClientsImport, $request->file('file'));
     return redirect()->route('admin.clients.index');
