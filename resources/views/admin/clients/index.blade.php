@@ -65,7 +65,7 @@
                     <!-- <th>Month</th> -->
                     <th>Modal Billing</th>
                     <th>AR Officer</th>
-                    <th>Remarks</th>
+                    <th>Status</th> <!-- change remarks to Status -->
                     <!-- <th>Sales Group</th> -->
                     <th>Branch</th>
                     <th>Reg Date</th>

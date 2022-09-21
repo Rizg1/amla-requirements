@@ -52,11 +52,11 @@ class ClientsController extends Controller
         if (! Gate::allows('client_create')) {
             return abort(401);
         }
-        
+        $status = \App\Status::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');
         $folders = \App\Folder::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');
         $created_bies = \App\User::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');
         
-        return view('admin.clients.create', compact('created_bies', 'folders'));
+        return view('admin.clients.create', compact('created_bies', 'folders','status'));
 
     }
 
@@ -74,12 +74,12 @@ class ClientsController extends Controller
         if (! Gate::allows('client_edit')) {
             return abort(401);
         }
-        
+ 
         $client->load('folder', 'appForm', 'kycForm', 'enrollList', 'signedProposal', 'secReg', 'articlesIncorp', 'byLaws', 'giS','corpSec', 'certList', 'validId', 'stateMent');
-
+        $status = \App\Status::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');
         $created_bies = \App\User::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');
 
-        return view('admin.clients.edit', compact('client', 'created_bies', 'filenames'));
+        return view('admin.clients.edit', compact('client', 'created_bies', 'filenames', 'status'));
     }
 
     public function store(StoreClientsRequest $request)

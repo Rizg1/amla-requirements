@@ -30,6 +30,7 @@ class SpatieMediaController extends Controller
         foreach ($files as $file) {
             try {
                 $model->exists     = true;
+                $model->save();
                 $media             = $model->addMedia($file)->toMediaCollection($request->input('bucket'));
                 $addedFiles[]      = $media;
             } catch (\Exception $e) {

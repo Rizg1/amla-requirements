@@ -260,8 +260,13 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    <label for="remarks">Remarks</label>
-                    <input type="text" name="remarks" id="remarks" class="form-control"  value="{{$client->remarks}}">
+                    <label for="remarks">Status</label>
+                    <select name="remarks" id="remarks" class="form-control select2">
+                            <option value="{{$client->remarks}}">N/A</option>
+                            @foreach ($status as $f)
+                                <option value="{{$f}}" {{ ($client->remarks == $f) ? 'selected' : ''}} >{{$f}} </option>
+                            @endforeach
+                        </select>
                 </div>
             </div>
             <!-- <div class="row">
