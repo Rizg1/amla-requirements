@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Admin\ClientsController;
 use App\Http\Controllers\Admin\ClientsExportController;
-use App\Http\Controllers\Admin\ClientsImportController;
+// use App\Http\Controllers\Admin\ClientsImportController;
 
 Route::get('/', function () { return redirect('/admin/home'); });
 
@@ -28,7 +28,7 @@ $this->router->post('register', 'Auth\RegisterController@register')->name('auth.
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/home', 'HomeController@index');
     Route::post('/export', ClientsExportController::class)->name('export');
-    Route::post('/import', ClientsImportController::class)->name('import');
+    // Route::post('/import', ClientsImportController::class)->name('import');
 
     Route::resource('roles', 'Admin\RolesController');
     Route::post('roles_mass_destroy', ['uses' => 'Admin\RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
