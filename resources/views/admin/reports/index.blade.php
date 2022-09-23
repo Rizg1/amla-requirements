@@ -24,7 +24,7 @@
             </form>
         </div>
     </div>
-    <!-- <h3 class="page-title">Import Details</h3>
+    <h3 class="page-title">Import Details</h3>
         <div class="panel-heading">
             <div class="row">
                 <form action="{{ route('admin.import') }}" method="POST" enctype="multipart/form-data">
@@ -39,7 +39,7 @@
                         </div>
                 </form>
             </div>
-        </div> -->
+        </div>
 @stop
 
 @section('javascript')
